@@ -1,5 +1,3 @@
-# mkovpro
-Mkov Pro
 #Mkovenic project
 
 Client:
@@ -8,7 +6,7 @@ Uses Angular Front End Framework.
 Server:
 Uses Laravel PHP Framework.
 
-System Requirments.
+System Requirments:
 Angular.
 PHP.
 MySQL.

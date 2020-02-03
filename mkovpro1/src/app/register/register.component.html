@@ -1,0 +1,66 @@
+<div class="divReg">
+ <div class="divUser" style="text-align:center"><h2>{{ regInfo }}</h2></div>
+ <form class="frmUser" [formGroup]="rgForm" (ngSubmit)="registerUser()" >
+  <fieldset>
+    <legend>Registration</legend>
+    <h4 *ngIf="success">Registration in progress...</h4>
+    <div class="inpUser">
+      <input type="text" placeholder="Name" formControlName="nameN" id="nameN" name="nameN" required>
+      <div *ngIf="submitted && fld.nameN.errors" class="error">
+          <div *ngIf="fld.nameN.errors.required">Name is required</div>
+      </div>
+    </div>
+    <br><br>
+    <div class="inpUser">
+        <input type="text" placeholder="Surname" formControlName="surnameN" id="surnameN" name="surnameN" required>
+        <div *ngIf="submitted && fld.surnameN.errors" class="error">
+            <div *ngIf="fld.surnameN.errors.required">Surname is required.</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="inpUser">
+        <input type="email" placeholder="Email" formControlName="emailN" id="emailN" name="emailN" required>
+        <div *ngIf="submitted && fld.emailN.errors" class="error">
+            <div *ngIf="fld.emailN.errors.required">Email is required.</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="inpUser">
+        <input type="password" placeholder="password" formControlName="passwordN" id="passwordN" name="passwordN" min="2" max="9" required>
+        <div *ngIf="submitted && fld.passwordN.errors" class="error">
+            <div *ngIf="fld.passwordN.errors.required">Password is required.</div>
+        </div>
+        <div *ngIf="submitted" class="error">
+          <div *ngIf="rgForm.controls.passwordN.value.length > 9" class="info">Password is too long.</div>
+          <div *ngIf="rgForm.controls.passwordN.value.length < 5">Password is too weak.</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="inpUser">
+        <textarea placeholder="address" formControlName="addressN"  id="addressN" name="addressN" required></textarea>
+        <div *ngIf="submitted && fld.addressN.errors" class="error">
+            <div *ngIf="fld.addressN.errors.required">address is required.</div>
+        </div>
+        <div *ngIf="submitted" class="info">
+          <div *ngIf="rgForm.controls.addressN.value.length < 8">Address is too short.</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="inpUser">
+        <input type="submit" id="btnOK" value="OK">
+    </div>
+    <br>
+  </fieldset>
+  <div *ngIf="submitted" class="results">
+    <div>{{ rgForm.controls.nameN.value}}</div>
+    <div>{{ rgForm.controls.emailN.value }}</div>
+  </div>
+ </form>
+ <br><br>
+ <br><hr>
+ <div class="inpUser" style="text-align:center">
+    <a routerLink="/login">Login</a>
+ </div>
+ <br><hr>
+</div>
+<br>

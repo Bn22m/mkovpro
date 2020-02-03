@@ -1,0 +1,64 @@
+/*
+ * Author: Brian M
+**/
+
+.frmUser {
+   min-width: 150px;
+   max-width: 500px;
+   width: 90%;
+   background: #ffffc8;
+}
+.inpUser {
+   width: 90%;
+}
+
+.divReg{
+  background: #fffff8;
+}
+
+input:focus, textarea:focus {
+  color: goldenrod;
+}
+
+input, textarea, select {
+		font-family: "Source Sans Pro", "sans-serif";
+		font-weight: 300;
+		font-size: 18pt;
+		line-height: 1.75em;
+		letter-spacing: 0.025em;
+}
+
+input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		display: block;
+		width: 90%;
+		padding: 0.65em 0.75em;
+		background: none;
+		border: solid 2px #e5e6e7;
+		border-radius: 0.5em;
+		outline: none;
+}
+
+form > div {
+    position: relative;
+}
+
+form {
+    width: 550px;
+    margin: 2em auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    border: groove 10px green;
+}
+
+.error {
+  background: red;
+}
+
+.info {
+  background: yellow;
+}

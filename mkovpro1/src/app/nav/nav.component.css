@@ -1,0 +1,18 @@
+header {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+    background: #1affeeaa;
+}
+.listR {
+    display: inline;
+}
+.listR:before {
+    content: " | ";
+    padding-right: 1.3em;
+}
+.listR:nth-child(1):before {
+    content: "  ";
+    padding: 1.3em;
+}

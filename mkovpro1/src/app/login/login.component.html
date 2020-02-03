@@ -1,0 +1,37 @@
+<br>
+<div class="divLog">
+<div class="divUser" style="text-align:center"><h2>{{ logInfo }}</h2></div>
+<form class="frmUser" [formGroup]="lgForm" (ngSubmit)="loginUser()" >
+  <fieldset>
+    <legend>Login</legend>
+    <h4 *ngIf="success">Login in progress...</h4>
+    <div class="inpUser">
+        <input type="email" placeholder="Email" formControlName="emailN" id="emailN" name="emailN" required>
+        <div *ngIf="submitted && fld.emailN.errors" class="error">
+            <div *ngIf="fld.emailN.errors.required">Email is required.</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="inpUser">
+        <input type="password" placeholder="password" formControlName="passwordN" id="passwordN" name="passwordN" min="1" max="12" required>
+        <div *ngIf="submitted && fld.passwordN.errors" class="error">
+            <div *ngIf="fld.passwordN.errors.required">Password is required.</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="inpUser">
+        <input type="submit" id="btnOK" value="OK">
+    </div>
+    <br>
+  </fieldset>
+  <div *ngIf="submitted" class="results">
+    <div>{{ lgForm.controls.emailN.value }}</div>
+  </div>
+</form>
+<br><hr><br>
+<div class="inpUser" style="text-align:center">
+    <a routerLink="/register">Register</a>
+</div>
+<br><br>
+</div>
+<br>

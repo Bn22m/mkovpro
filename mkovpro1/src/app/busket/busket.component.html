@@ -1,0 +1,64 @@
+<div><label>{{ xbusket }}: </label><label>{{ ybusket | currency: "ZAR" }}</label></div>
+<div><label>{{ binfo }}</label></div>
+<div class="admn1" id="divOrder" style="display: none">
+<form class="frmUser" [formGroup]="bgForm" (ngSubmit)="buyOK()" >
+  <fieldset>
+      <legend>Information</legend>
+      <h4 *ngIf="success">Done...</h4>
+      {{ buyInfo }}
+  </fieldset>
+  <div class="divOrder1">
+    <div class="inpUser">
+      <input type="text" id="inShop" placeholder="shop" value="{{ buy }}" formControlName="inShop" readonly required>
+    </div>
+    <div class="inpUser">
+      <input type="text" id="inCode" placeholder="Code" value="{{ productcode }}" formControlName="inCode" readonly required>
+    </div>
+    <div class="inpUser">
+      <input type="text" id="inPay" value="{{ pay }}" placeholder="buy" formControlName="inPay" readonly required>
+    </div>
+    <div class="inpUser">
+      <input type="text" id="inAcc" placeholder="Account" value="{{ account }}" formControlName="inAcc" readonly required>
+    </div>
+    <div class="inpUser">
+      <input type="text" id="inRef" placeholder="Ref" value="{{ refn }}" formControlName="inRef" readonly required>
+    </div>
+    <div class="inpUser">
+      <input type="text" id="inName" placeholder="Name" value ="{{ name }}" formControlName="inName" readonly required>
+    </div>
+    <div class="inpUser">
+      <input type="email" id="inEmail" placeholder="Email" value="{{ email }}" formControlName="inEmail" readonly required>
+    </div>
+    <div class="inpUser">
+      <textarea id="inAddress" placeholder="Address" value="{{ address }}" formControlName="inAddress" required></textarea>
+    </div>
+    <div class="inpUser">
+        <input type="submit" id="btnOK" value="OK">
+    </div>
+  </div>
+</form>
+</div>
+<div class="divBuy" id="divBuy">
+  <button class="btnBuy" (click)="buyNow()">buy Now</button>
+</div>
+<div id="divT2" style="background-color: green">
+  <table>
+    <tr>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Buy now</th>
+    </tr>
+    <tr *ngFor="let mydata of productsData">
+      <td>{{ mydata.description }}</td>
+      <td>{{ mydata.price | currency: "ZAR" }}</td>
+      <td><button class="btnBuy" (click)="info(mydata)">{{ mydata.name }}</button></td>
+      <td><img src="/../assets/100{{ mydata.id }}.jpg" alt="{{mydata.code}}"></td>
+    </tr>
+    <tr>
+      <td><button class="btnBuy" (click)="reset()">Reset</button></td>
+    </tr>
+  </table>
+</div>
+<br>
+<div>{{ title }}</div>
+<br><br>

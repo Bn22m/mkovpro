@@ -1,0 +1,33 @@
+<app-nav></app-nav>
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<p>{{ xbusket }}: {{ ybusket }}</p>
+<hr>
+<div id="divT" style="background-color: green">
+<div id="divP" style="background-color: gray" align="center">
+  <input type="text" id="txtBuy" value="" readonly>
+  <input type="text" id="txtPay" value="" readonly>
+</div>
+
+<table id="tblPro">
+  <tr>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Buy now</th>
+  </tr>
+  <tr *ngFor="let mydata of data">
+    <td>{{ mydata.description }}</td>
+    <td>{{ mydata.price }}</td>
+    <td><button class="btnBuy" (click)="info(mydata)">{{ mydata.code }}</button></td>
+  </tr>
+  <tr>
+    <td><button class="btnBuy" (click)="infoMore()">More</button></td>
+  </tr>
+</table>
+</div>
+<div id="divR">
+<router-outlet></router-outlet>
+</div>

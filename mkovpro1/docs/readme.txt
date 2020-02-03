@@ -1,5 +1,3 @@
-# mkovpro
-Mkov Pro
 #Mkovenic project
 
 Client:

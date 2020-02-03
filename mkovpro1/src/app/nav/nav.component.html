@@ -1,0 +1,27 @@
+<header>
+    <div class="menu" id="divOff" style="display: block">
+        <nav>
+            <ul>
+                <li class="listR"><a routerLink="/">{{ appTitle }}</a></li>
+                <li class="listR"><a routerLink="/register">Register</a></li>
+                <li class="listR"><a routerLink="/login">Login</a></li>
+                <li class="listR"><a routerLink="/info">Info</a></li>
+                <li class="listR"><a routerLink="/help">Help</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="menu" id="divOn" style="display: none">
+        <nav>
+            <ul>
+                <li class="listR"><a routerLink="/">{{ appTitle }}</a></li>
+                <li class="listR">{{ xbusket }}</li>
+                <li class="listR">{{ ybusket }}</li>
+                <li class="listR"><a routerLink="/busket">Shop</a></li>
+                <li class="listR"><input type="text" id="lstB" value="0.00" readonly></li>
+                <li class="listR"><label (click) ="busketInfo()">Info</label></li>
+                <li class="listR"><a routerLink="/admin">Admin</a></li>
+                <li class="listR"><a routerLink="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

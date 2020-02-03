@@ -1,0 +1,43 @@
+<p>{{ title }}</p>
+<div class="inpUser">
+  <input type="password" placeholder="Code" id="txtCode">
+  <div>
+    <button class="btnSto" (click)="stock()">OK</button>
+  </div>
+</div>
+<div id="divAdm2" style="display: none">
+  <h2>Stock {{ title }} </h2>
+  <form class="frmUser" [formGroup]="stoForm" (ngSubmit)="stockOK()" >
+    <fieldset>
+        <legend>Information</legend>
+        <h4 *ngIf="success">Done...</h4>
+        {{ stockInfo }}
+    </fieldset>
+    <div class="divStock">
+      <div class="inpUser">
+        <input type="text" id="pName" placeholder="New Product Name" formControlName="pName" required>
+      </div>
+      <div class="inpUser">
+        <input type="text" id="pDescription" placeholder="Product Description" formControlName="pDescription" required>
+      </div>
+      <div class="inpUser">
+        <input type="text" id="pPrice" placeholder="Selling Price" formControlName="pPrice" required>
+      </div>
+      <div class="inpUser">
+        <input type="number" id="pQuantity" placeholder="Quantity" formControlName="pQuantity" required>
+      </div>
+      <div class="inpUser">
+        <input type="email" id="pRef" placeholder="Ref" formControlName="pRef" readonly required>
+      </div>
+      <div class="inpUser">
+        <textarea id="pComment" placeholder="Comments" formControlName="pComment"></textarea>
+      </div>
+      <div class="inpUser">
+        <input type="password" id="pCode" placeholder="Code" formControlName="pCode" required>
+      </div>
+    </div>
+    <div class="inpUser">
+        <input type="submit" id="btnOK" value="OK">
+    </div>
+  </form>
+</div>

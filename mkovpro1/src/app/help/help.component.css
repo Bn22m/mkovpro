@@ -1,0 +1,16 @@
+#divH0 {
+  background: url('/../assets/onlineshop.jpg');
+  color: rgba(25, 250, 255, 0.95);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+#divH0 a {
+  display: block;
+  outline: 0;
+  line-height: 2em;
+  text-decoration: none;
+  color: inherit;
+  height: 150px;
+}
